@@ -1,9 +1,9 @@
 
-# Agentic RAG with LangChain and Groq
+# Agentic RAG with LangGraph and Groq
 
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-This project demonstrates an **Agentic RAG (Retrieval Augmented Generation) system** using **LangChain**, **Groq**, and **Cassandra** as a vector store. It intelligently routes user questions to either a vector database containing information about LLM agents, prompt engineering, and adversarial attacks, or to Wikipedia for general knowledge queries.
+This project demonstrates an **Agentic RAG (Retrieval Augmented Generation) system** using **Langgraph**, **Groq**, and **Cassandra** as a vector store. It intelligently routes user questions to either a vector database containing information about LLM agents, prompt engineering, and adversarial attacks, or to Wikipedia for general knowledge queries.
 
 ## Features
 
@@ -157,22 +157,63 @@ workflow.add_edge("wiki_search", END)
 app = workflow.compile()
 ```
 
-### Example Queries
 
-**Vectorstore Query:**
+## Project Structure and Workflow
+
+The system is built on a conditional routing logic using LangChain's expression language and Groq's function calling capabilities.
+
+### 1. Data Ingestion
+
+The system ingests documentation from specific URLs related to LLM agents and prompt engineering. These documents are split into smaller chunks and then embedded using the `all-MiniLM-L6-v2` model.
+
+### 2. Vector Store
+
+The embedded documents are stored in a Cassandra database, which is configured as a vector store. This allows for efficient semantic search and retrieval.
+
+### 3. Query Routing
+
+A core component of this project is the **query router**. It uses a Groq model with a structured output to classify the user's question into one of two categories: `vectorstore` or `wiki_search`.
+
+* **`vectorstore`**: The question is related to the specialized topics (agents, prompt engineering, etc.). The system retrieves relevant documents from the Cassandra vector store.
+* **`wiki_search`**: The question is for general knowledge. The system performs a search using the Wikipedia API.
+
+### 4. Generation
+
+Based on the routing decision, the system retrieves the appropriate information and provides a final answer.
+
+---
+
+
+## Usage Examples
+
+Here are two examples demonstrating the system's routing capabilities.
+
+### Example 1: Query for Vector Store
+
+This query is related to LLM agents and will be routed to the Cassandra vector store.
 
 ```python
 inputs_vectorstore = {"question": "What is agent?"}
 for output in app.stream(inputs_vectorstore):
-    print(output['documents'][0].page_content)
+    for key, value in output.items():
+        pprint(f"Node '{key}':")
+    pprint("\n---\n")
+
+pprint(value['documents'][0].page_content)
 ```
 
-**Wikipedia Query:**
+### Example 2: Query for Wikipedia Search
+
+This query is for general knowledge and will be routed to the Wikipedia search tool.
 
 ```python
 inputs_wiki = {"question": "Avengers"}
 for output in app.stream(inputs_wiki):
-    print(output['documents'][0].page_content)
+    for key, value in output.items():
+        pprint(f"Node '{key}':")
+    pprint("\n---\n")
+
+pprint(value['documents'][0].page_content)
 ```
 
 ## References
@@ -184,12 +225,10 @@ for output in app.stream(inputs_wiki):
 - [Arxiv API Wrapper](https://arxiv.org/help/api/user-manual)
 - [Wikipedia API Wrapper](https://www.mediawiki.org/wiki/API:Main_page)
 
-## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Author
 
 **Rathod Pavan Kumar Naik**  
-- Email: bt22cse111@iiitn.ac.in  
-- GitHub: [rathod-pavan](https://github.com/rathod-pavan)
+- Email: rathodpavan2292@gmail.com  
+- GitHub: [rathod-0007](https://github.com/rathod-0007)
