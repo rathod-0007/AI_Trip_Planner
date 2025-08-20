@@ -121,13 +121,10 @@ ai-trip-planner/
 ## References
 
 - [Streamlit Documentation](https://docs.streamlit.io/)
-- [OpenAI API](https://platform.openai.com/docs/)
 - [Google Maps API](https://developers.google.com/maps/documentation)
 - [LangChain](https://www.langchain.com/docs/)
 
-## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Author
 
