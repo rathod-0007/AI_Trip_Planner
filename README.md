@@ -105,18 +105,6 @@ print(custom_plan)
 - Visualize locations on an interactive map
 - Export itinerary to PDF or shareable format
 
-## Project Structure
-
-```
-ai-trip-planner/
-├── app.py                # Streamlit main app
-├── ai_trip_planner/      # Core AI logic module
-│   ├── __init__.py
-│   ├── planner.py        # Trip planning logic
-│   └── utils.py          # Helper functions
-├── requirements.txt
-└── README.md
-```
 
 ## References
 
