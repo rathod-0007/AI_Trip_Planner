@@ -1,8 +1,29 @@
-# AI Trip Planner
+# Agentic TravX – AI-Powered Trip Planning Platform
 
-[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/streamlit-1.30-orange)](https://streamlit.io/)
+[![LangChain](https://img.shields.io/badge/langchain-0.1-purple)](https://www.langchain.com/docs/)
+[![LangChain Community](https://img.shields.io/badge/langchain--community-0.1-lightgrey)](https://github.com/hwchase17/langchain-community)
+[![LangChain Experimental](https://img.shields.io/badge/langchain--experimental-0.1-lightgrey)](https://github.com/hwchase17/langchain-experimental)
+[![LangGraph](https://img.shields.io/badge/langgraph-0.1-green)](https://github.com/yourusername/langgraph)
+[![LangChain Groq](https://img.shields.io/badge/langchain--groq-0.1-red)](https://www.groq.com/)
+[![LangChain OpenAI](https://img.shields.io/badge/langchain--openai-0.1-blue)](https://platform.openai.com/)
+[![LangChain Tavily](https://img.shields.io/badge/langchain--tavily-0.1-lightblue)](https://github.com/yourusername/langchain_tavily)
+[![LangChain Google Community](https://img.shields.io/badge/langchain--google--community-0.1-yellow)](https://github.com/yourusername/langchain-google-community)
+[![LangChain Google Places API](https://img.shields.io/badge/langchain--google--places-0.1-orange)](https://developers.google.com/places)
+[![FastAPI](https://img.shields.io/badge/fastapi-0.95-blue)](https://fastapi.tiangolo.com/)
+[![Uvicorn](https://img.shields.io/badge/uvicorn-0.22-green)](https://www.uvicorn.org/)
+[![Python Dotenv](https://img.shields.io/badge/python--dotenv-0.21-lightgrey)](https://pypi.org/project/python-dotenv/)
+[![Pydantic](https://img.shields.io/badge/pydantic-2.3-blue)](https://docs.pydantic.dev/)
+[![HTTPX](https://img.shields.io/badge/httpx-0.24-lightblue)](https://www.python-httpx.org/)
+[![Requests](https://img.shields.io/badge/requests-2.31-red)](https://docs.python-requests.org/)
+[![Groq API](https://img.shields.io/badge/groq-API-red)](https://www.groq.com/)
+[![Google Places API](https://img.shields.io/badge/gplaces-API-blue)](https://developers.google.com/maps/documentation/places)
+[![Google Weather API](https://img.shields.io/badge/weather-API-lightblue)](https://developers.google.com/weather)
+[![ExchangeRates API](https://img.shields.io/badge/exchangerates-API-lightgreen)](https://exchangeratesapi.io/)
+[![Google API](https://img.shields.io/badge/google-API-blue)](https://developers.google.com/)
 
-The **AI Trip Planner** is an intelligent travel planning system powered by AI. It allows users to get personalized travel itineraries, recommended attractions, hotels, and transportation suggestions. The system leverages agentic AI to provide smart trip plans and adapts to user preferences.
+The **AI Trip Planner** is an intelligent travel planning system powered by AI. It provides personalized itineraries, recommended attractions, hotels, and transportation suggestions, and adapts dynamically to user preferences.
 
 ## Features
 
